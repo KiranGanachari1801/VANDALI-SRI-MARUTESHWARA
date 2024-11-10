@@ -153,5 +153,5 @@ def item_detail(item_id):
     item = catalog[item_id]  # Retrieve the item based on the ID
     return render_template('item_detail.html', item=item)
 
-if __name__ == '__main__':
-    app.run(debug=True)
+#if __name__ == '__main__':
+    #app.run(debug=True)

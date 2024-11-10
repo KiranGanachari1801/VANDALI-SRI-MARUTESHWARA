@@ -1,0 +1,67 @@
+[
+    {
+        "name": "KK",
+        "description": "it is good company",
+        "category": "Men",
+        "subcategory": "Pants",
+        "brand": "jocky",
+        "color": "black ",
+        "size": "90",
+        "images": [
+            "-473Wx593H-460076874-black-MODEL.avif",
+            "-473Wx593H-460735157-white-MODEL2.avif"
+        ]
+    },
+    {
+        "name": "pant",
+        "description": "it is good company",
+        "category": "Men",
+        "subcategory": "Pants",
+        "brand": "jocky",
+        "color": "black ",
+        "size": "M",
+        "images": [
+            "S22J319931BEHBL_BLACK_alt1.jpg",
+            "S22J319931BEHBL_BLACK_alt2.jpg"
+        ]
+    },
+    {
+        "name": "kurts",
+        "description": "it is good company",
+        "category": "Women",
+        "subcategory": "Kurts",
+        "brand": "H&M",
+        "color": "blue",
+        "size": "M",
+        "images": [
+            "10705561-1.jpg",
+            "10705561-2.jpg"
+        ]
+    },
+    {
+        "name": "Jackets",
+        "description": "it is good company",
+        "category": "Women",
+        "subcategory": "Jackets",
+        "brand": "USPA",
+        "color": "cream color",
+        "size": "S",
+        "images": [
+            "1.webp",
+            "2.webp"
+        ]
+    },
+    {
+        "name": "Jackets",
+        "description": "it is good company",
+        "category": "Women",
+        "subcategory": "Jackets",
+        "brand": "USPA",
+        "color": "cream color",
+        "size": "S",
+        "images": [
+            "1.webp",
+            "2.webp"
+        ]
+    }
+]

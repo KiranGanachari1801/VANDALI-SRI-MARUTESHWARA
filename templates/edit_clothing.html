@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Clothing Item</title>
+</head>
+<body>
+    <h1>Edit Clothing Item</h1>
+    <form method="POST" enctype="multipart/form-data">
+        <div>
+            <label for="name">Clothing Name:</label>
+            <input type="text" name="name" id="name" value="{{ item.name }}" required>
+        </div>
+        <div>
+            <label for="description">Description:</label>
+            <textarea name="description" id="description" required>{{ item.description }}</textarea>
+        </div>
+        <div>
+            <label for="category">Category:</label>
+            <input type="text" name="category" id="category" value="{{ item.category }}" required>
+        </div>
+        <div>
+            <label for="subcategory">Subcategory:</label>
+            <input type="text" name="subcategory" id="subcategory" value="{{ item.subcategory }}" required>
+        </div>
+        <div>
+            <label for="brand">Brand:</label>
+            <input type="text" name="brand" id="brand" value="{{ item.brand }}" required>
+        </div>
+        <div>
+            <label for="color">Color:</label>
+            <input type="text" name="color" id="color" value="{{ item.color }}" required>
+        </div>
+        <div>
+            <label for="size">Size:</label>
+            <input type="text" name="size" id="size" value="{{ item.size }}" required>
+        </div>
+        <div>
+            <label for="images">Upload New Images:</label>
+            <input type="file" name="images" id="images" multiple>
+        </div>
+        <button type="submit">Update Clothing</button>
+    </form>
+</body>
+</html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}"> 
+    <title>Clothing Catalog</title>
+</head>
+<body>
+    <header>
+        <img src="{{ url_for('static', filename='images/WhatsApp Image 2024-10-27 at 22.34.49_93de9246.jpg') }}" alt="Catalog Logo" style="position: absolute; left: 60px; width: 150px; height: 150;">
+        <h1>VANDALI SRI MARUTESHWARA</h1>
+        <h2>Clothing Catalog</h2>
+        <p>Phone No: 9916593898 / 7760662416</p>
+        {% if session.logged_in %}
+            <a class="button" href="{{ url_for('logout') }}">Logout</a> |
+            <a class="button" href="{{ url_for('add_clothing') }}">Add New Clothing Item</a>
+        {% else %}
+            <a class="button" href="{{ url_for('login') }}">Login</a>
+        {% endif %}
+    </header>
+
+    <form action="{{ url_for('index') }}" method="GET" class="search-bar">
+        <input type="text" name="query" placeholder="Search for clothing..." value="{{ request.args.get('query', '') }}">
+        <button type="submit">Search</button>
+    </form>
+
+    <nav class="categories">
+        <a href="{{ url_for('index', category='all') }}">All</a> |
+        <div class="dropdown">
+            <a href="{{ url_for('index', category='Men') }}">Men</a>
+            <div class="dropdown-content">
+                <a href="{{ url_for('index', category='Men', subcategory='Shirts') }}">Shirts</a>
+                <a href="{{ url_for('index', category='Men', subcategory='Pants') }}">Pants</a>
+                <a href="{{ url_for('index', category='Men', subcategory='Jackets') }}">Jackets</a>
+            </div>
+        </div> |
+        <div class="dropdown">
+            <a href="{{ url_for('index', category='Women') }}">Women</a>
+            <div class="dropdown-content">
+                <a href="{{ url_for('index', category='Women', subcategory='Kurts') }}">Kurts</a>
+                <a href="{{ url_for('index', category='Women', subcategory='Pants') }}">Pants</a>
+                <a href="{{ url_for('index', category='Women', subcategory='Jackets') }}">Jackets</a>
+            </div>
+        </div> |
+        <div class="dropdown">
+            <a href="{{ url_for('index', category='Kids') }}">Kids</a>
+            <div class="dropdown-content">
+                <a href="{{ url_for('index', category='Kids', subcategory='Shirts') }}">Shirts</a>
+                <a href="{{ url_for('index', category='Kids', subcategory='Pants') }}">Pants</a>
+                <a href="{{ url_for('index', category='Kids', subcategory='Jackets') }}">Jackets</a>
+            </div>
+        </div>
+    </nav>
+    <section class="catalog">
+        <ul>
+            {% for item in catalog %}
+            <li class="catalog-item">
+                <div class="image-slider">
+                    {% for image in item.images %}
+                        <img src="{{ url_for('static', filename='images/' ~ image) }}" alt="{{ item.name }}" width="100">
+                    {% endfor %}
+                </div>
+                <strong>{{ item.name }}</strong> - {{ item.description }} <br>
+                Category: {{ item.category }} | Brand: {{ item.brand }} | Color: {{ item.color }} | Size: {{ item.size }}
+                
+                <!-- Add View Details button -->
+                <a class="button" href="{{ url_for('item_detail', item_id=loop.index0) }}">View Details</a>
+        
+                {% if session.logged_in %}
+                <form action="{{ url_for('delete_clothing', index=loop.index0) }}" method="POST">
+                    <button type="submit" class="button delete">Delete</button>
+                </form>
+                <a href="{{ url_for('edit_clothing', item_id=loop.index0) }}">Edit</a>
+                {% endif %}
+            </li>
+            {% else %}
+            <li>No clothing items available.</li>
+            {% endfor %}
+        </ul>
+    </section>
+
+    <!-- Address and Map Section -->
+    <section class="address-section">
+        <h3>Our Address</h3>
+        <p>Opp. Amar Hospital, Basavanagar, HUTTI - 584115. Tq : Ligasugur Dt: Raichur.</p>
+        <div class="map-button">
+            
+        <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3802.4504578001755!2d76.6663034!3d16.1991967!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3babbb0f0f4f5555%3A0xd8b45080ff0e3480!2s16%C2%B011'57.1%22N+76%C2%B040'08.0%22E!5e0!3m2!1sen!2sin!4v1698689315177!5m2!1sen!2sin" 
+            width="200" 
+            height="200" 
+            style="border:0;" 
+            allowfullscreen="" 
+            loading="lazy">
+        </iframe>
+    </section>
+    
+</body>
+</html>

@@ -1,0 +1,322 @@
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f4f4f4; /* Changed background for a softer look */
+    color: #333;
+}
+
+h1, h2 {
+    font-family: Rosewood;
+    text-align: center;
+    color: #333; /* Darker color for better contrast */
+}
+
+h5 {
+    text-align: right;
+}
+
+/* Header */
+header {
+    text-align: center;
+    padding: 10px;
+    background-color: #d08d3c;
+    color: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+/* Links and Buttons */
+a, .button {
+    display: inline-block;
+    margin: 10px 0;
+    padding: 10px;
+    background-color: #28a745;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+a:hover, .button:hover {
+    background-color: #218838;
+}
+
+.button.delete {
+    background-color: #e74c3c;
+}
+
+.button.delete:hover {
+    background-color: #c0392b;
+}
+
+button {
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #c82333;
+}
+
+/* Catalog and Item List */
+ul {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+li {
+    background: #f9f9f9;
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 200px;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.catalog-item, .item-details {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.catalog-item h3, .item-details h2 {
+    font-size: 1.2em;
+    margin: 10px 0;
+}
+
+/* Images */
+img, .catalog-item img, li img {
+    width: 100%;
+    max-width: 180px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    object-fit: cover;
+}
+
+.carousel-item img {
+    height: 100px;
+    object-fit: cover;
+}
+
+/* Carousel */
+.carousel {
+    display: flex;
+    overflow: hidden;
+    max-width: 400px;
+    margin: 20px auto;
+    border-radius: 10px;
+}
+
+.image-slider {
+    display: flex;
+    overflow-x: auto;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.image-slider img {
+    margin-right: 10px;
+    flex-shrink: 0;
+    width: 300px;
+}
+
+/* Category Filter */
+.category-filter {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.category-filter a {
+    padding: 10px 20px;
+    border: 1px solid #28a745;
+    background-color: #fff;
+    color: #28a745;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.category-filter a:hover {
+    background-color: #28a745;
+    color: #fff;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    li {
+        flex-direction: column;
+        text-align: center;
+        width: 100%;
+    }
+
+    .carousel {
+        max-width: 300px;
+    }
+
+    img, .catalog-item img, li img {
+        max-width: 100px;
+    }
+}
+
+/* Miscellaneous */
+form {
+    background-color: white; /* White background for forms */
+    padding: 20px;
+    border-radius: 8px; /* Slightly rounded corners */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Soft shadow for elevation */
+    max-width: 600px;
+    margin: 20px auto; /* Centering the form */
+}
+
+div {
+    margin-bottom: 15px; /* Space between form fields */
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #555; /* Darker color for better readability */
+}
+
+input[type="text"],
+textarea,
+input[type="file"] {
+    width: 100%;
+    padding: 10px; /* Comfortable padding */
+    border: 1px solid #ccc; /* Light gray border */
+    border-radius: 4px; /* Rounded corners */
+    font-size: 14px; /* Font size for inputs */
+    transition: border 0.3s;
+}
+
+input[type="text"]:focus,
+textarea:focus {
+    border: 1px solid #007BFF; /* Blue border on focus */
+    outline: none; /* Removing the outline */
+}
+
+button[type="submit"] {
+    background-color: #007BFF; /* Blue for submit button */
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px; /* Larger font for buttons */
+    transition: background-color 0.3s;
+    width: 100%; /* Full-width button */
+}
+
+button[type="submit"]:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}
+
+/* Search Bar Styles */
+.search-bar {
+    text-align: center;
+    margin: 20px;
+}
+
+.search-bar input[type="text"] {
+    width: 60%;
+    padding: 8px;
+    border: 1px solid #ccc; /* Light gray border */
+    border-radius: 4px; /* Rounded corners */
+}
+
+.search-bar button {
+    padding: 8px 15px;
+    background-color: #4CAF50; /* Green for search button */
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px; /* Rounded corners */
+}
+
+.search-bar button:hover {
+    background-color: #45a049; /* Darker green on hover */
+}
+
+/* Categories */
+.categories {
+    text-align: center;
+    padding: 10px;
+}
+
+.categories a, .dropdown-content a {
+    text-decoration: none;
+    color: #333;
+}
+
+.dropdown {
+    display: inline-block;
+    position: relative;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9; /* Light background for dropdown */
+    min-width: 100px; /* Minimum width for dropdown items */
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block; /* Show dropdown on hover */
+}
+
+.dropdown-content a {
+    padding: 10px; /* Spacing for dropdown items */
+    display: block; /* Block display for dropdown items */
+    text-align: left; /* Left-align text in dropdown */
+}
+
+.dropdown-content a:hover {
+    background-color: #ddd; /* Light gray on hover for dropdown */
+}
+/* Additional styles for address section */
+.address-section {
+    background-color: #d08d3c;
+    color: white;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+.address-section h3 {
+    margin-bottom: 10px;
+}
+
+.address-section p {
+    margin-bottom: 15px;
+}
+
+.address-section .inframe {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+}
